@@ -1,0 +1,11 @@
+torch
+torchvision
+pillow
+transformers
+opencv-python-headless
+scikit-image
+Flask
+werkzeug
+numpy
+requests
+openai

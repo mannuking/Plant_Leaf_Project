@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comparison Result</title>
+</head>
+<body>
+    <h1>Comparison Result</h1>
+    {% if ssim_score %}
+        <p>SSIM Score: {{ ssim_score }}</p>
+
+        <h2>Original Images:</h2>
+        <img src="{{ url_for('uploaded_file', filename=image1) }}" alt="Image 1" width="400">
+        <img src="{{ url_for('uploaded_file', filename=image2) }}" alt="Image 2" width="400">
+
+        <h2>Highlighted Differences:</h2>
+        <img src="{{ url_for('uploaded_file', filename=highlighted_image) }}" alt="Highlighted Image" width="400">
+    {% endif %}
+
+    {% if anomaly_label and explanation %}
+        <h2>Analysis Results:</h2>
+        <p><b>Anomaly Label:</b> {{ anomaly_label }}</p>
+        <p><b>Explanation:</b> {{ explanation }}</p>
+    {% endif %}
+</body>
+</html>
